@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .many-sec{
+            position: relative;
+            background-color:rgb(245, 245, 241);
+            width: 100%;
+            height: 100vh;
+        }
+        .many-main-div{
+            display: block;
+            position: absolute;
+            width: 69%;
+            background-color: rgb(238, 249, 249);
+            top: 4.5%;
+            left: 14.2%;
+            box-shadow: 2px 2px 1px 1px rgb(160, 160, 159);
+            border-radius: .41pc;
+            animation: Many_Div  .7s ease-in-out alternate-reverse;
+        }
+       
+        @keyframes Many_Div {
+            0%{}
+            100%{
+                transform: translateY(-5rem);
+                
+            }
+        }
+        nav, ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1rem;
+
+        }
+        ul li{
+            transition: .5s ease-in-out;
+
+        }
+        ul li a{
+            margin-left: 1rem;
+            padding: .2rem;
+            font-size: 1rem;
+            font-weight: 800;
+            font-style: oblique;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 4px 4px 1px 1px rgb(160, 160, 159);
+            border-radius: 4px;
+        }
+
+        ul li:hover,ul li:active{
+            cursor: pointer;
+            transform: scale(.9);
+        }
+        .brand-h2{
+            transform: skewY(11deg);
+            letter-spacing: 1px;
+
+        }
+        .many-main-div h1 {
+            text-align: center;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+        }
+        form {
+            position: relative;
+            padding: 2rem;
+        }
+        input {
+            width: 70%;
+            margin: .6rem;
+            margin-left: 3rem;
+            padding: .5rem;
+            border: none;
+            border-radius: .3rem;
+            background-color: rgb(238, 244, 248);
+            box-shadow: 2px 2px 4px black;
+        }
+
+        #emaill , #pass{
+            margin-left: 2rem;
+        }
+        #pass{
+            margin-left: 2.6rem;
+            width: 71.4%;
+
+        }
+
+        input:focus{
+            outline-color: rgb(118, 118, 248);
+            box-shadow: 1px 1px 3px 2px royalblue;
+        }
+        button{
+            font-weight: 900;
+        }
+
+      
+
+        .select-div{
+            width: 50%;
+        }
+
+        .btn{
+            box-shadow: 2px 2px 4px black;
+        }
+
+    </style>
+    <title>Simple css many</title>
+</head>
+<body>
+<section class="many-sec">
+    <nav>
+        <h2 class="brand-h2">
+            BRAND
+        </h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#" onclick={LoginIn()}>Login in</a></li>
+
+        </ul>
+    </nav>
+
+
+    <div id="main__div" class="many-main-div">
+        <h1>Welcome To Our Login Form</h1>
+        <form action="">
+            <div class="select-div">
+                <select class="form-select" aria-label="">
+                    <option selected>Select Your Country</option>
+                    <option value="1">Palestine</option>
+                    <option value="2">Jordan</option>
+                    <option value="3">Eygpt</option>
+                  </select>
+            </div>
+            <div>
+                <label for="fname">
+                    Enter Your First Name
+                </label>
+                <input type="text" name="fname" id="" placeholder="Enter Your First Name">
+            </div>
+            <div>
+                <label for="lname">
+                    Enter Your Last Name
+                </label>
+                <input type="text" name="lname" id="" placeholder="Enter Your Last Name">
+            </div>
+            <div>
+                <label for="email">
+                    Enter Your Email Adress
+                </label>
+                <input type="email" name="email" id="emaill" placeholder="Enter Your Email">
+            </div>
+            <div class="m-2">
+                <label for="pass">
+                    Enter Your Passwoerd
+                </label>
+                <input type="password" name="pass" id="pass" placeholder="Enter Your Password">
+            </div>
+            
+        <div class="btnn-div m-2">
+            <button class="btn btn-success m-2">Agree</button>
+            <button onclick={ExitLoginIn()} class="btn btn-danger">Cancel</button>
+        </div>
+        </form>
+       
+                  
+    </div>
+
+</section>
+
+
+
+
+<script>
+ const mainDiv = document.getElementById("main__div")
+
+    const LoginIn  = () => {
+        mainDiv.style.display = "block";
+        mainDiv.style.translate = "22px"
+
+        console.log("display Good")
+    }
+
+
+    
+
+    const ExitLoginIn  = () => {
+        mainDiv.style.display = "none"
+        console.log("display Good")
+    }
+
+
+</script>
+</body>
+</html>
